@@ -38,7 +38,7 @@
         
         <a-tab-pane key="2" tab="注册">
           <div class="item">
-            <a-input size="large" placeholder="用户名">
+            <a-input size="large" placeholder="用户名" v-model:value="regForm.account">
               <template v-slot:prefix>
                 <UserOutlined />
               </template>
@@ -46,7 +46,7 @@
           </div>
 
           <div class="item">
-            <a-input size="large" placeholder="密码">
+            <a-input size="large" placeholder="密码" v-model:value="regForm.password">
               <template v-slot:prefix>
                 <LockOutlined />
               </template>
@@ -62,7 +62,7 @@
           </div>
 
           <div class="item">
-            <a-button size="large" type="primary">
+            <a-button size="large" type="primary" @click="register">
               注册
             </a-button>
           </div>
