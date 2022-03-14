@@ -26,3 +26,21 @@ export const result = (response, authShowErrorMsg = true) => {
     }
   }
 }
+
+export const clone = (obj) => {
+  return JSON.parse(JSON.stringify(obj))
+}
+
+export const formatTimestamp = (ts) => {
+  const date = new Date(Number(ts));
+
+  const YY = date.getFullYear();
+  const MM = date.getMonth() + 1;
+  const DD = date.getDate();
+
+  const hh = date.getHours();
+  const mm = date.getMinutes();
+  const ss = date.getSeconds();
+
+  return `${YY}/${MM}/${DD} ${hh}:${mm}:${ss}`;
+}
