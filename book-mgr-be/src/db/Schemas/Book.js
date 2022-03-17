@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { getMata } = require('../helpers')
+const { getMata, preSave } = require('../helpers')
 
 const BookSchema = new mongoose.Schema({
   //书名
@@ -18,4 +18,5 @@ const BookSchema = new mongoose.Schema({
   meta: getMata()
 })
 
+BookSchema.pre('save', preSave)
 mongoose.model('Book', BookSchema)

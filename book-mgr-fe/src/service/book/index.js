@@ -36,9 +36,9 @@ export const update = (data = {}) => {
   );
 };
 
-// export const login = (account, password) => {
-//   return axios.post("http://localhost:3000/auth/login", {
-//     account,
-//     password
-//   })
-// };
+export const detail = (id) => {
+  return axios.get(
+    `http://localhost:3000/book/detail/${id}`,
+  );
+};
+
